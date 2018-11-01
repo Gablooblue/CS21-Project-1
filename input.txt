@@ -1,0 +1,18 @@
+*000 / Start at octal address 000
+MAIN, CLA CLL / ACC = LNK = 0
+TAD B / ACC = B
+CMA / ACC = -B
+TAD A / ACC = A - B
+SMA CLA / If A - B < 0, skip next; do ACC = 0 after
+HLT / End
+TAD A / ACC = A
+DCA TEMP / TEMP = A; ACC = 0
+TAD B / ACC = B
+DCA A / A = B; ACC = 0
+TAD TEMP / ACC = TEMP
+DCA B / B = TEMP; ACC = 0
+HLT / End
+A, 1234 / 4-symbol octal value
+B, 2460 / 4-symbol octal value
+TEMP, 0000 / 4-symbol octal value
+$ / End of assembly program marker
